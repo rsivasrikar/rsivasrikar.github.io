@@ -1,0 +1,1501 @@
+/* =========================================================
+   SIVA SRIKAR REGULAGADDA — PORTFOLIO
+   Main stylesheet
+========================================================= */
+
+
+/* ---------- GLOBAL RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #0b1725;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    height: 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4%;
+
+    background: rgba(3, 17, 31, 0.92);
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* ---------- BRAND ---------- */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-mark {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    border-right: 1px solid rgba(255,255,255,0.35);
+
+    padding-right: 16px;
+}
+
+.brand-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* ---------- DESKTOP MENU ---------- */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.desktop-nav > a,
+.more-button {
+    position: relative;
+
+    padding: 28px 0 24px;
+
+    color: rgba(255,255,255,0.88);
+
+    transition: color 0.25s ease;
+}
+
+.desktop-nav > a:hover,
+.more-button:hover {
+    color: #39a9ff;
+}
+
+.desktop-nav > a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 17px;
+
+    width: 0;
+    height: 2px;
+
+    background: #2f9df4;
+
+    transition: width 0.25s ease;
+}
+
+.desktop-nav > a:hover::after {
+    width: 100%;
+}
+
+
+/* ---------- MORE DROPDOWN ---------- */
+
+.more-menu {
+    position: relative;
+}
+
+.more-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.more-dropdown {
+    position: absolute;
+
+    top: 62px;
+    right: -45px;
+
+    width: 230px;
+
+    background: rgba(5, 24, 42, 0.98);
+
+    border: 1px solid rgba(75, 166, 232, 0.25);
+
+    border-radius: 6px;
+
+    padding: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s;
+
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+}
+
+.more-menu:hover .more-dropdown,
+.more-menu:focus-within .more-dropdown {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.more-dropdown a {
+    display: block;
+
+    padding: 13px 15px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.more-dropdown a:hover {
+    background: rgba(47,157,244,0.12);
+    color: #49b4ff;
+}
+
+
+/* ---------- MOBILE MENU BUTTON ---------- */
+
+.mobile-menu-button {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 720px;
+
+    padding: 145px 5% 120px;
+
+    display: flex;
+    align-items: flex-start;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(27, 103, 156, 0.30),
+            transparent 35%
+        ),
+        linear-gradient(
+            110deg,
+            #03111f 0%,
+            #061b2e 45%,
+            #0a2b45 100%
+        );
+}
+
+
+/*
+   Later we will add the final UAV image here.
+   For now this gives us the dark aerospace visual style.
+*/
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2,13,25,0.98) 0%,
+            rgba(2,13,25,0.78) 40%,
+            rgba(2,13,25,0.20) 72%
+        );
+
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    z-index: 0;
+}
+
+
+/* ---------- HERO CONTENT ---------- */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(720px, 62%);
+}
+
+.eyebrow {
+    color: #3eb4ff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 5vw, 76px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: clamp(15px, 1.5vw, 21px);
+
+    color: #47baff;
+
+    font-weight: 500;
+
+    margin-bottom: 24px;
+}
+
+.hero h2 span {
+    color: rgba(255,255,255,0.5);
+
+    margin: 0 8px;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    font-size: 16px;
+
+    color: rgba(255,255,255,0.78);
+
+    margin-bottom: 34px;
+}
+
+
+/* ---------- HERO BUTTONS ---------- */
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    min-height: 50px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button {
+    background: #087bd1;
+
+    border: 1px solid #168ee3;
+
+    color: white;
+}
+
+.primary-button:hover {
+    background: #0b8ce9;
+}
+
+.secondary-button {
+    background: rgba(255,255,255,0.02);
+
+    border: 1px solid rgba(255,255,255,0.65);
+
+    color: white;
+}
+
+.secondary-button:hover {
+    border-color: #42b6ff;
+
+    background: rgba(66,182,255,0.08);
+}
+
+
+/* =========================================================
+   HERO STATISTICS
+========================================================= */
+
+.hero-stats {
+    position: absolute;
+
+    z-index: 2;
+
+    right: 5%;
+    bottom: 100px;
+
+    width: min(680px, 56%);
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid rgba(255,255,255,0.16);
+
+    padding-top: 20px;
+}
+
+.stat {
+    padding: 0 22px;
+
+    border-left: 1px solid rgba(255,255,255,0.18);
+}
+
+.stat:first-child {
+    border-left: none;
+}
+
+.stat strong {
+    display: block;
+
+    color: #42c1ff;
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+.stat span {
+    display: block;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* ---------- SCROLL INDICATOR ---------- */
+
+.scroll-indicator {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    padding: 65px 5% 70px;
+
+    display: grid;
+
+    grid-template-columns: 30% 70%;
+
+    gap: 55px;
+
+    background: #ffffff;
+}
+
+.section-label {
+    position: relative;
+
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 25px;
+}
+
+.section-label::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 32px;
+    height: 2px;
+
+    background: #168ee3;
+}
+
+
+/* ---------- ABOUT INTRO ---------- */
+
+.about-intro {
+    padding-right: 25px;
+}
+
+.about-intro h2 {
+    font-size: 29px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+
+    max-width: 320px;
+}
+
+.about-intro > p:last-child {
+    font-size: 14px;
+
+    color: #536171;
+}
+
+
+/* =========================================================
+   CAREER JOURNEY
+========================================================= */
+
+.journey-line {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+.journey-line::before {
+    content: "";
+
+    position: absolute;
+
+    top: 29px;
+    left: 9%;
+    right: 9%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #168ee3,
+            #8ecdf6,
+            #168ee3
+        );
+
+    z-index: 0;
+}
+
+.journey-item {
+    position: relative;
+
+    z-index: 1;
+
+    text-align: center;
+}
+
+.journey-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #071b2d;
+
+    color: white;
+
+    font-size: 22px;
+
+    border: 4px solid white;
+
+    box-shadow: 0 0 0 1px rgba(8,123,209,0.15);
+}
+
+.journey-icon.active {
+    background: #087bd1;
+}
+
+.journey-item h3 {
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    margin-bottom: 9px;
+}
+
+.journey-item p {
+    color: #657180;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   PLACEHOLDER SECTIONS
+========================================================= */
+
+.placeholder-section {
+    min-height: 260px;
+
+    padding: 70px 5%;
+
+    border-top: 1px solid #e5e9ee;
+}
+
+.placeholder-section h2 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.placeholder-section p {
+    color: #687583;
+}
+
+.placeholder-section.dark {
+    background: #031629;
+
+    color: white;
+
+    border-top: none;
+}
+
+.placeholder-section.dark p {
+    color: rgba(255,255,255,0.55);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    min-height: 150px;
+
+    padding: 38px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+
+    background: #02111f;
+
+    color: white;
+}
+
+footer strong {
+    font-size: 15px;
+}
+
+footer p {
+    margin-top: 8px;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #40b8ff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .desktop-nav {
+        gap: 18px;
+    }
+
+    .brand-name {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 135px;
+
+        min-height: 800px;
+    }
+
+    .hero-content {
+        width: 75%;
+    }
+
+    .hero-stats {
+        width: 90%;
+
+        left: 5%;
+        right: auto;
+
+        bottom: 90px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .site-header {
+        height: 64px;
+
+        padding: 0 20px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .brand-name {
+        display: inline;
+
+        font-size: 11px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            120px
+            22px
+            250px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero h2 {
+        line-height: 1.7;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+
+    /* STATS */
+
+    .hero-stats {
+        left: 22px;
+        right: 22px;
+
+        bottom: 65px;
+
+        width: auto;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        row-gap: 22px;
+    }
+
+    .stat {
+        padding: 0 12px;
+    }
+
+    .stat:nth-child(3) {
+        border-left: none;
+    }
+
+    .stat strong {
+        font-size: 19px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section {
+        padding: 55px 22px;
+    }
+
+
+    /* JOURNEY */
+
+    .journey-line {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .journey-line::before {
+        top: 20px;
+        bottom: 20px;
+
+        left: 29px;
+        right: auto;
+
+        width: 1px;
+        height: auto;
+    }
+
+    .journey-item {
+        display: grid;
+
+        grid-template-columns: 60px 1fr;
+
+        column-gap: 18px;
+
+        text-align: left;
+    }
+
+    .journey-icon {
+        grid-row: 1 / 3;
+
+        width: 58px;
+        height: 58px;
+
+        margin: 0;
+    }
+
+    .journey-item h3 {
+        align-self: end;
+
+        margin-bottom: 4px;
+    }
+
+    .journey-item p {
+        align-self: start;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+}
+/* =========================================================
+   PROFESSIONAL EXPERIENCE
+========================================================= */
+
+.experience-section {
+    padding: 85px 5% 100px;
+
+    background: #031629;
+
+    color: white;
+}
+
+
+/* ---------- SECTION INTRO ---------- */
+
+.section-heading {
+    max-width: 720px;
+
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-size: clamp(32px, 3vw, 48px);
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: rgba(255,255,255,0.62);
+
+    max-width: 620px;
+
+    font-size: 15px;
+}
+
+.light-heading .section-label {
+    color: #43b8ff;
+}
+
+
+/* =========================================================
+   EXPERIENCE FEATURE
+========================================================= */
+
+.experience-feature {
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 540px;
+
+    margin-bottom: 55px;
+
+    background: #061d31;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.18);
+}
+
+
+/* ---------- REVERSE LAYOUT ---------- */
+
+.experience-feature.reverse {
+    grid-template-columns: 58% 42%;
+}
+
+.experience-feature.reverse
+.experience-visual {
+    order: 2;
+}
+
+.experience-feature.reverse
+.experience-content {
+    order: 1;
+}
+
+
+/* =========================================================
+   EXPERIENCE VISUAL
+========================================================= */
+
+.experience-visual {
+    position: relative;
+
+    min-height: 540px;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+}
+
+
+/* Temporary UAV-inspired visual */
+
+.adani-visual {
+    background:
+
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(54,178,255,0.38),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #071a2c,
+            #0a3859
+        );
+}
+
+
+/* Temporary innovation visual */
+
+.innovation-visual {
+    background:
+
+        radial-gradient(
+            circle at 35% 35%,
+            rgba(48,166,237,0.34),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            145deg,
+            #09263b,
+            #04111f
+        );
+}
+
+
+/* Technical grid effect */
+
+.experience-visual::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.04) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    opacity: 0.5;
+}
+
+
+/* Decorative diagonal line */
+
+.experience-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130%;
+    height: 1px;
+
+    left: -15%;
+    top: 46%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(73,190,255,0.5),
+            transparent
+        );
+
+    transform: rotate(-18deg);
+}
+
+
+/* ---------- VISUAL NUMBER ---------- */
+
+.visual-number {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    font-size: 100px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    color: rgba(255,255,255,0.035);
+}
+
+
+/* ---------- VISUAL TEXT ---------- */
+
+.visual-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.visual-tag {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 7px 10px;
+
+    border: 1px solid
+        rgba(70,187,255,0.45);
+
+    color: #4bc0ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+.visual-content h3 {
+    font-size: clamp(34px, 3.5vw, 55px);
+
+    line-height: 0.98;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   EXPERIENCE CONTENT
+========================================================= */
+
+.experience-content {
+    padding: 55px 55px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.company-type {
+    color: #43b8ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 10px;
+}
+
+.experience-content > h3 {
+    font-size: clamp(26px, 2.5vw, 38px);
+
+    line-height: 1.1;
+
+    margin-bottom: 8px;
+}
+
+.experience-content > h4 {
+    color: rgba(255,255,255,0.62);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    margin-bottom: 24px;
+}
+
+.experience-summary {
+    color: rgba(255,255,255,0.72);
+
+    max-width: 680px;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIBILITY CARDS
+========================================================= */
+
+.responsibility-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.responsibility-card {
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 20px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.responsibility-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(66,185,255,0.35);
+
+    background:
+        rgba(66,185,255,0.045);
+}
+
+.responsibility-card > span {
+    position: absolute;
+
+    top: 14px;
+    right: 16px;
+
+    color:
+        rgba(66,185,255,0.25);
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.responsibility-card h5 {
+    font-size: 13px;
+
+    margin-bottom: 9px;
+
+    padding-right: 30px;
+}
+
+.responsibility-card p {
+    color:
+        rgba(255,255,255,0.52);
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   INNOVATION METRICS
+========================================================= */
+
+.innovation-metrics {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    margin: 5px 0 28px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    padding: 22px 0;
+}
+
+.innovation-metrics > div {
+    padding: 0 20px;
+
+    border-left:
+        1px solid
+        rgba(255,255,255,0.12);
+}
+
+.innovation-metrics > div:first-child {
+    padding-left: 0;
+
+    border-left: none;
+}
+
+.innovation-metrics strong {
+    display: block;
+
+    color: #45bdff;
+
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+.innovation-metrics span {
+    display: block;
+
+    color:
+        rgba(255,255,255,0.56);
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   FUNDING ECOSYSTEMS
+========================================================= */
+
+.funding-ecosystems {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.funding-ecosystems span {
+    padding: 7px 10px;
+
+    background:
+        rgba(64,183,255,0.06);
+
+    border:
+        1px solid
+        rgba(64,183,255,0.18);
+
+    color:
+        rgba(255,255,255,0.72);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   EXPERIENCE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .experience-feature,
+    .experience-feature.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-feature.reverse
+    .experience-visual,
+
+    .experience-feature.reverse
+    .experience-content {
+        order: initial;
+    }
+
+    .experience-visual {
+        min-height: 380px;
+    }
+
+}
+
+
+/* =========================================================
+   EXPERIENCE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .experience-section {
+        padding:
+            65px
+            22px
+            75px;
+    }
+
+    .experience-content {
+        padding:
+            35px
+            24px;
+    }
+
+    .experience-visual {
+        min-height: 320px;
+
+        padding: 30px;
+    }
+
+    .responsibility-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .innovation-metrics {
+        grid-template-columns:
+            1fr;
+
+        gap: 18px;
+    }
+
+    .innovation-metrics > div {
+        border-left: none;
+
+        padding:
+            0 0 15px;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.08);
+    }
+
+    .innovation-metrics > div:last-child {
+        border-bottom: none;
+    }
+
+}
